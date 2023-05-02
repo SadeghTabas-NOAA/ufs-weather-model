@@ -359,6 +359,27 @@ elif [[ $MACHINE_ID = expanse.* ]]; then
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_expanse fv3_conf/fv3_slurm.IN
 
+elif [[ $MACHINE_ID = noaacloud.* ]]; then
+
+  module use /apps/modules/modulefiles
+  module load rocoto/1.3.3
+  ROCOTORUN=$(which rocotorun)
+  ROCOTOSTAT=$(which rocotostat)
+  ROCOTOCOMPLETE=$(which rocotocomplete)
+  ROCOTO_SCHEDULER=slurm
+
+  QUEUE=batch
+  COMPILE_QUEUE=batch
+  PARTITION=
+  ACCNR=nems
+  dprefix=/lustre/
+  DISKNM=/contrib/Sadegh.Tabas/RT/
+  STMP=${dprefix}/stmp4
+  PTMP=${dprefix}/stmp2
+  SCHEDULER=slurm
+  cp fv3_conf/fv3_slurm.IN_aws fv3_conf/fv3_slurm.IN
+  cp fv3_conf/compile_slurm.IN_aws fv3_conf/compile_slurm.IN
+  
 else
   die "Unknown machine ID, please edit detect_machine.sh file"
 fi
@@ -514,6 +535,10 @@ if [[ $ROCOTO == true ]]; then
     QUEUE=batch
     COMPILE_QUEUE=batch
     ROCOTO_SCHEDULER=slurm
+  elif [[ $MACHINE_ID = aws.* ]]; then
+    QUEUE=batch
+    COMPILE_QUEUE=batch
+    ROCOTO_SCHEDULER=slurm 
   else
     die "Rocoto is not supported on this machine $MACHINE_ID"
   fi
