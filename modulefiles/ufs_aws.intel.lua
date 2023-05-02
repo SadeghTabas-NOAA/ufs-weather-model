@@ -15,6 +15,6 @@ load("ufs_common_spack")
 setenv("CC", "mpiicc")
 setenv("CXX", "mpiicpc")
 setenv("FC", "mpiifort")
-setenv("CMAKE_Platform", "pw_aws.intel")
+setenv("CMAKE_Platform", "aws.intel")
 
 whatis("Description: UFS build environment")
