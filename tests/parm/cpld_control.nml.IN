@@ -177,6 +177,7 @@ deflate_level=1
   cnvcld       = @[CNVCLD]
   imfshalcnv   = @[IMFSHALCNV]
   imfdeepcnv   = @[IMFDEEPCNV]
+  progsigma    = @[PROGSIGMA]
   ras          = @[RAS]
   cdmbgwd      = @[CDMBWD]
   prslrd0      = 0.
