@@ -260,7 +260,7 @@ deflate_level=1
   knob_ugwp_dokdis  = 1
   knob_ugwp_ndx4lh  = 1 
   knob_ugwp_version = @[KNOB_UGWP_VERSION]
-  launch_level = 54
+  launch_level      = 54
 /
 
 &gfdl_cloud_microphysics_nml
@@ -378,9 +378,9 @@ deflate_level=1
 /
 
 &MOM_input_nml
-  output_directory = 'MOM6_OUTPUT/',
-  input_filename = '@[MOM6_RESTART_SETTING]'
-  restart_input_dir = 'INPUT/',
+  output_directory   = 'MOM6_OUTPUT/',
+  input_filename     = '@[MOM6_RESTART_SETTING]'
+  restart_input_dir  = 'INPUT/',
   restart_output_dir = 'RESTART/',
   parameter_filename = 'INPUT/MOM_input',
-  'INPUT/MOM_override'/
+                       'INPUT/MOM_override'/
